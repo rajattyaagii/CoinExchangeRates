@@ -295,18 +295,17 @@ class _MyApplicationState extends State<MyApplication> with SingleTickerProvider
             }
             else if(snapshot.connectionState == ConnectionState.waiting)
             {
-              CircularProgressIndicator();
+              return Center(child: CircularProgressIndicator());
             }
           
           
           }
           
-          else if (!snapshot.data) {
-            CircularProgressIndicator();
+          else if (!snapshot.hasData) {
+            
+            return Center(child: CircularProgressIndicator());
           }
-          else{
-            CircularProgressIndicator();
-          }
+          
           
           // else if (snapshot.hasError) {
           //   return new Text("${snapshot.error}");
